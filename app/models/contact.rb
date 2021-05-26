@@ -19,4 +19,31 @@ class Contact < ApplicationRecord
   # numericality - make sure its a type of number integer, float
   # presence - makes sure it's not empty
   # uniqueness - only that specific object is able to pass through record/case sensitive
+
+  # validation opt
+  # allow-nil 
+  # allow-blank
+  # message
+  # on
+
+  validates :first_name, :last_name, :age, :phone, :email, presence: true
+  validates :email, uniqueness: true
+  validates :age, numericality: { only_integer: true }
+
+  #Callback - trigger some logic or code based on an action
+  # before_validation
+  # after_validation
+  # around_validation
+  # before_save
+  # after_save
+  # around_save
+  # before_create
+  # after_create
+  # around_create
+  
+  # Model methods
+  # Fat models skinny controllers- any logic wise would be in the model, 
+  # class methods
+  
+  # instance methods 
 end
